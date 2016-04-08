@@ -1,1 +1,57 @@
-<xml xmlns="http://www.w3.org/1999/xhtml"></xml>
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="controls_whileUntil" id="1" inline="false" x="99" y="6">
+    <field name="MODE">UNTIL</field>
+    <value name="NUMBER">
+      <block type="sensor_button" id="2">
+        <field name="OBJECT">ENTER</field>
+      </block>
+    </value>
+    <statement name="DO">
+      <block type="controls_if" id="3" inline="false">
+        <mutation elseif="1" else="1"></mutation>
+        <value name="IF0">
+          <block type="sensor_button" id="4">
+            <field name="OBJECT">UP</field>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="movement_left" id="5"></block>
+        </statement>
+        <value name="IF1">
+          <block type="sensor_button" id="6">
+            <field name="OBJECT">DOWN</field>
+          </block>
+        </value>
+        <statement name="DO1">
+          <block type="movement_right" id="7"></block>
+        </statement>
+        <statement name="ELSE">
+          <block type="movement_setmotors" id="8" inline="true">
+            <value name="BOTHMOVLEFT">
+              <block type="math_number" id="9">
+                <field name="NUM">100</field>
+              </block>
+            </value>
+            <value name="BOTHMOVRIGHT">
+              <block type="math_number" id="10">
+                <field name="NUM">95</field>
+              </block>
+            </value>
+          </block>
+        </statement>
+        <next>
+          <block type="robot_delay" id="11" inline="true">
+            <value name="DELAY">
+              <block type="math_number" id="12">
+                <field name="NUM">100</field>
+              </block>
+            </value>
+          </block>
+        </next>
+      </block>
+    </statement>
+    <next>
+      <block type="movement_stop" id="13"></block>
+    </next>
+  </block>
+</xml>
